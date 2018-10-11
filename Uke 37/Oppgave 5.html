@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If setninger</title>
+</head>
+<body>
+
+<input id="inpThunder" type="number" placeholder="Høyde i cm">
+<br>
+<button id="btnThunder">?</button>
+<br>
+<br>
+<input id="inpRagnarok" type="number" placeholder="Høyde i cm">
+<br>
+<button id="btnRagnarok">?</button>
+
+
+
+
+<script>
+    var inpThunder = document.getElementById("inpThunder");
+    var btnThunder = document.getElementById("btnThunder");
+    var btnRagnarok = document.getElementById("btnRagnarok");
+    var inpRagnarok = document.getElementById("inpRagnarok");
+
+
+    btnThunder.onclick = function () {
+        if (inpThunder.value >100){
+            document.write("Du er høyere enn 100 cm")}
+        else{
+            document.write("Du er ikke høyere enn 100 cm")
+        }
+    };
+    
+    btnRagnarok.onclick = function () {
+        if (inpRagnarok.value >100 && inpRagnarok.value <180){
+            document.write("Du er mellom 100 og 180 cm")}
+        else{
+            document.write("Du er ikke mellom 100 og 180 cm")
+        }
+    };
+
+</script>
+
+</body>
+</html>

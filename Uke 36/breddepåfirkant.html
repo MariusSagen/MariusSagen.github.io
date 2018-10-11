@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <title>Sette bredde</title>
+
+    <style>
+
+        #Firkant{
+            background-color: Orange;
+            width: 200px;
+            height: 200px;
+            transition: 1s;
+        }
+
+    </style>
+
+</head>
+<div>
+
+    <input type="range" min="0" max="1024" id="inpBredde">
+    <br>
+    <input type="range" min="0" max="1024" id="inpHøyde">
+    <br>
+    Muuta neliön väriä
+    <br>
+    <input type="color" id="inpFarge">
+
+
+<div id="Firkant"></div>
+
+
+<script>
+
+    var inpBredde = document.getElementById("inpBredde");
+    var Firkant = document.getElementById("Firkant");
+    var inpHøyde = document.getElementById("inpHøyde");
+    var inpFarge = document.getElementById("inpFarge");
+
+    inpBredde.onmousemove = function () {
+        Firkant.style.width = inpBredde.value + "px";
+    };
+    inpHøyde.onmousemove = function () {
+        Firkant.style.height = inpHøyde.value + "px";
+    };
+    inpFarge.onchange = function () {
+        Firkant.style.backgroundColor = inpFarge.value;
+    }                                                  ;
+
+</script>
+
+</body>
+</html>

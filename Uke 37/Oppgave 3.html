@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+</head>
+<body>
+
+<button id="minKnapp">Trykk Her</button>
+
+<img id="mittBilde" src="">
+
+
+<script>
+
+    var minKnapp = document.getElementById(minKnapp);
+    var mittBilde = document.getElementById(mittBilde);
+
+    var Bilder = ["bilder/meem.jpg", "bilder/michaelcerasocialist"];
+
+
+    minKnapp.onclick = function() {
+        mittBilde.src = Bilder[Math.floor(Math.random()*bilder.length)];
+    };
+</script>
+
+</body>
+</html>

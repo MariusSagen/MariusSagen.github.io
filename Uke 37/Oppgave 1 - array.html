@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+
+<button id="btnListe">Alle filmene</button>
+<br>
+<br>
+<span id="spnListe"></span>
+<br>
+<br>
+<button id="btnFilm">Film nr 3</button>
+<br>
+<br>
+<span id="spnFilm"></span>
+<br>
+<br>
+<input id="inpFilm" type="text" placeholder="Legg til en egen film">
+<br>
+<button id="btnLeggTil">Legg til</button>
+<br>
+<br>
+<span id="spnListe2"></span>
+
+
+<script>
+
+    var btnListe = document.getElementById("btnListe");
+    var btnFilm = document.getElementById("btnFilm");
+    var inpFilm = document.getElementById("inpFilm");
+    var btnLeggTil = document.getElementById("btnLeggTil");
+    var spnListe = document.getElementById("spnListe");
+    var spnFilm = document.getElementById("spnFilm");
+    var spnListe2 = document.getElementById("spnListe2");
+    var ArrayFilm = ["Die Hard",  "Die Hard 2",  "Die Hard in New York",  "A Good Day to Die Hard"];
+
+    btnListe.onclick = function() {
+        document.write(ArrayFilm);
+    };
+
+    btnFilm.onclick = function () {
+        document.write(ArrayFilm[2]);
+    };
+
+    btnLeggTil.onclick = function () {
+        ArrayFilm.push(inpFilm.value);
+        console.log(ArrayFilm);
+        document.write(ArrayFilm);
+    };
+
+</script>
+
+</body>
+</html>

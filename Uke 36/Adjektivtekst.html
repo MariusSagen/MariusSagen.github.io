@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <title>Adjektivhistorie</title>
+</head>
+<body>
+
+    <input id="inpAdj1" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj2" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj3" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj4" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj5" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj6" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj7" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj8" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj9" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <input id="inpAdj10" type="text" placeholder="Skriv adjektiv!">
+    <br>
+    <button id="btnAdj1">Plasser</button>
+
+
+
+<script>
+
+    var inpAdj1 = document.getElementById("inpAdj1");
+    var inpAdj2 = document.getElementById("inpAdj2");
+    var inpAdj3 = document.getElementById("inpAdj3");
+    var inpAdj4 = document.getElementById("inpAdj4");
+    var inpAdj5 = document.getElementById("inpAdj5");
+    var inpAdj6 = document.getElementById("inpAdj6");
+    var inpAdj7 = document.getElementById("inpAdj7");
+    var inpAdj8 = document.getElementById("inpAdj8");
+    var inpAdj9 = document.getElementById("inpAdj9");
+    var inpAdj10 = document.getElementById("inpAdj10");
+
+    var btnAdj1 = document.getElementById("btnAdj1");
+
+
+    
+
+    btnAdj1.onclick = function ( ) {
+        var historie = 'En ${inpAdj3.value} vinterdag skulle den ${inpAdj7.value} IT-klassen på overnattingstur. Alle de ${inpAdj5.value} elevene hadde med seg langrennsski, soveposer og en ${inpAdj1.value} sekk med mat og varmt tøy. Alle gledet seg til denne ${inpAdj2.value} turen. Kristine hadde på seg en ${inpAdj10.value} ny lue, og den ${inpAdj8.value} Tormod hadde på seg en ${inpAdj9.value} jakke. Den ${inpAdj4.value} Anne og ${inpAdj6.value} Sabrina hadde nye langrennsski som de hadde fått til jul'
+        document.write(historie);
+        };
+</script>
+
+</body>
+</html>

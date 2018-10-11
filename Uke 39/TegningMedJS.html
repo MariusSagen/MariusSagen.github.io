@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tegning i Javascript</title>
+
+<style>
+canvas{
+border: solid;
+}
+</style>
+
+</head>
+<body>
+
+
+<canvas id="canvas" width="600" height="600">
+    Beklager din nettleser støtter ikke canvas-elementer.
+</canvas>
+
+
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillRect(100,100,200,300); //fyller rektangel (x,y,bredde,høyde)
+
+    ctx.fillStyle = "orange";
+    ctx.fillRect(50,350,150,200);
+    ctx.fillRect(500,50,75,75);
+
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(500,50,75,75);
+
+    ctx.moveTo(50,25);
+    ctx.lineTo(75,500);
+    ctx.lineTo(525,500);
+    ctx.lineTo(500,50);
+    ctx.lineTo(50,25);
+    ctx.stroke();
+
+</script>
+
+
+
+</body>
+</html>
