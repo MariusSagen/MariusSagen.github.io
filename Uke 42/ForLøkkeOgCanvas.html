@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ForLøkke og Canvas</title>
+
+    <style>
+        canvas{
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" height="600" width="600"></canvas>
+
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    for (var i = 0; i <= 10; i++){
+        var x = Math.random()*600;
+        var y = Math.random()*600;
+
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.arc(x, y, 25, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    function getRandomColor() {
+        let letters = "123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++);
+    }
+
+
+
+</script>
+
+</body>
+</html>
