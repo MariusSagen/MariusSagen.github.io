@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kaffe eller te</title>
+</head>
+<body>
+
+<main>
+
+    <div id="KaffeTe">
+        <div id="boks">
+        <h2>Hva vil du ha?</h2>
+        <input type="checkbox" id="inpKaffe">
+        <label for="inpKaffe">Kaffe?</label>
+        <br>
+        <input type="checkbox" id="inpTe">
+        <label for="inpTe">Te?</label>
+        <br>
+        <input type="checkbox" id="inpKjeks">
+        <label for="inpKjeks">Kjeks?</label>
+        <br>
+        <input type="checkbox" id="inpSmultring">
+        <label for="inpSmultring">Smultring?</label>
+        <br>
+        <button id="btnKaffeTe">Bestill</button>
+        </div>
+        <br>
+        <div id="divBestilling">Du har ikke bestilt noe enda</div>
+    </div>
+
+</main>
+
+<script>
+
+    const inpKaffe = document.getElementById("inpKaffe");
+    const inpTe = document.getElementById("inpTe");
+    const inpKjeks = document.getElementById("inpKjeks");
+    const inpSmultring = document.getElementById("inpSmultring");
+    const btnKaffeTe = document.getElementById("btnKaffeTe");
+    const divBestilling = document.getElementById("divBestilling");
+    
+    btnKaffeTe.onclick = function () {
+        let te = false;
+        let kaffe = false;
+        let kjeks = false;
+        let smultring = false;
+        
+        if (inpKaffe.checked){
+            kjeks = true;
+        } 
+        if (inpTe.checked){
+            te = true;
+        }
+        if (inpKjeks.checked){
+            kjeks = true;
+        } 
+        if (inpSmultring.checked){
+            smultring = true;
+        } 
+        
+        if (kaffe) 
+    }
+
+</script>
+
+</body>
+</html>

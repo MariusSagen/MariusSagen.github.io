@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 2</title>
+</head>
+<body>
+
+<input type="number" id="inpH">
+<br>
+<input type="number" id="inpB">
+<div id="losning"></div>
+
+<script>
+    const inpH = document.getElementById("inpH");
+    const inpB = document.getElementById("inpB");
+    const losning = document.getElementById("losning");
+
+    function finnAreal(h,b) {
+        return h*b;
+    }
+
+    inpH.oninput = function () {
+        losning.innerHTML = finnAreal(Number(inpH.value),Number(inpB.value));
+    }
+    inpB.oninput = function () {
+        losning.innerHTML = finnAreal(Number(inpH.value),Number(inpB.value));
+    }
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sikkerhetsapp</title>
+
+</head>
+<body>
+
+<h2>Adder eller subtraher antall i salen</h2>
+
+<button id="btnMinus">Subtraher</button>
+<br>
+<br>
+<button id="btnPluss">Adder</button>
+<br>
+<br>
+<h4>Antall i salen</h4>
+<div id="divTeller">0</div>
+
+
+<script>
+
+const divTeller = document.getElementById("divTeller");
+const btnMinus = document.getElementById("btnMinus");
+const btnPluss = document.getElementById("btnPluss");
+
+let antall = 0;
+
+btnMinus.onclick = function () {
+    if (antall.value < 0)
+        document.write("Tallet er mindre enn 0!");
+        divTeller.innerHTML = antall;
+    else {
+        antall -= 1;
+        divTeller.innerHTML = antall;
+    }
+}
+
+btnPluss.onclick = function () {
+    if (antall.value > 60)
+        document.write("Tallet er større en 60!");
+        divTeller.innerHTML = antall;
+    else {
+        antall += 1;
+        divTeller.innerHTML = antall;
+    }
+}
+
+</script>
+
+</body>
+</html>

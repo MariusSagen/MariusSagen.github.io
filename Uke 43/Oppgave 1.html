@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+
+<input type="number" id="inpTall">
+<br>
+<button id="btnTall">Sjekk ditt tall</button>
+
+<script>
+
+    const inpTall = document.getElementById("inpTall");
+    const btnTall = document.getElementById("btnTall");
+
+    btnTall.onclick = function storre() {
+        if (inpTall.value < 0) {
+            document.write("Tallet ditt er mindre enn 0");
+        }
+        else if (inpTall.value > 0) {
+            document.write("Tallet ditt er større enn 0");
+        }
+        else {
+            document.write("Tallet ditt er 0");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
