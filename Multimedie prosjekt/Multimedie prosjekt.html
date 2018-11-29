@@ -15,19 +15,32 @@
             width: 383px;
             height: 390px;
             margin: 200px auto;
+            transition: 1s;
         }
-        #btn:hover{
-            background-image: url("Bilder/IT button active.png");
-            width: 383px;
-            height: 390px;
-            margin: 200px auto;
-        }
-        #btn:active{
-            background-image: url("Bilder/IT button active.png");
-            width: 382px;
-            height: 390px;
-            margin: 200px auto;
 
+        .btnUsynlig{
+            display: none;
+        }
+
+        #trompet1{
+            content:url("Bilder/trompetmann.png");
+            position: fixed;
+            width: 600px;
+            height: auto;
+            right: 0;
+            bottom: 0;
+            transition: 2s;
+        }
+
+        #trompet2{
+            content:url("Bilder/trompetmann.png");
+            position: fixed;
+            width: 600px;
+            height: auto;
+            left: 0;
+            transform: scaleX(-1);
+            bottom: 0;
+            transition: 2s;
         }
 
     </style>
@@ -35,20 +48,36 @@
 </head>
 <body>
 
-<div id="btn">
+<div id="btn"></div>
 
+<div id="trompet1"></div>
 
-
-</div>
-
+<div id="trompet2"></div>
 
 <script>
 
-    var btn = document.getElementById("btn");
+    const btn = document.getElementById("btn");
+    const trompet1 = document.getElementById("trompet1");
+    const trompet2 = document.getElementById("trompet2");
+
+    let
 
     btn.onclick = function () {
-        btn.style.opacity = 0%;
+        btn.classList.add("btnUsynlig");
+    };
+
+    if (btn.classList.contains("btnUsynlig")) {
+        while (trompet1.style.right > 0) {
+            trompet1.moveBy(-2, 0);
+        }
     }
+
+    if (btn.classList.contains("btnUsynlig")) {
+        while (trompet2.style.left > 0) {
+            trompet2.moveBy(2, 0);
+        }
+    }
+
 
 </script>
 
