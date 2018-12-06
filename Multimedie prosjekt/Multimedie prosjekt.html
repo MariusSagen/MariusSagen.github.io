@@ -22,27 +22,6 @@
             display: none;
         }
 
-        #trompet1{
-            content:url("Bilder/trompetmann.png");
-            position: fixed;
-            width: 600px;
-            height: auto;
-            right: 0;
-            bottom: 0;
-            transition: 2s;
-        }
-
-        #trompet2{
-            content:url("Bilder/trompetmann.png");
-            position: fixed;
-            width: 600px;
-            height: auto;
-            left: 0;
-            transform: scaleX(-1);
-            bottom: 0;
-            transition: 2s;
-        }
-
     </style>
 
 </head>
@@ -50,33 +29,17 @@
 
 <div id="btn"></div>
 
-<div id="trompet1"></div>
-
-<div id="trompet2"></div>
-
 <script>
 
     const btn = document.getElementById("btn");
-    const trompet1 = document.getElementById("trompet1");
-    const trompet2 = document.getElementById("trompet2");
-
-    let
+    var lyd = new Audio("flyby-Conor-1500306612.mp3");
 
     btn.onclick = function () {
         btn.classList.add("btnUsynlig");
+        lyd.play();
+        document.body.style.backgroundColor = "blue";
     };
 
-    if (btn.classList.contains("btnUsynlig")) {
-        while (trompet1.style.right > 0) {
-            trompet1.moveBy(-2, 0);
-        }
-    }
-
-    if (btn.classList.contains("btnUsynlig")) {
-        while (trompet2.style.left > 0) {
-            trompet2.moveBy(2, 0);
-        }
-    }
 
 
 </script>
