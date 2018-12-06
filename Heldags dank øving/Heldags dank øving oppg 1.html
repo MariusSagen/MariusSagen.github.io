@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+
+<p>1A) Hva er en variabel?</p>
+<br>
+<p>En variabel er en verdi som man kan bruke i flere steder i koden til programmet.</p>
+<br>
+<br>
+<p>1B) Definer tre variabler som er av tre forkjellige datatyper og legg ved en kommentar med navnet til datatypen.</p>
+<br>
+<p>Se scripten</p>
+<br>
+<br>
+<p>1C) Bruk alert(..) og Math.random() så du får et tilfeldig heltall i en alert-boks:</p>
+<p>a: 1-6</p>
+<button id="btnA">Klikk her for alert-a</button>
+<p>b: 0-10</p>
+<button id="btnB">Klikk her for alert-b</button>
+<p>c: 10-20</p>
+<button id="btnC">Klikk her for alert-c</button>
+
+<script>
+
+    // 1B
+    var string = document.getElementById("string"); //Definerer variabelen ved navn "string", hver gang "string" blir brukt i koden skjønner systemet hva jeg referer til
+    var tall = 52; //Definerer at et ord betyr et tall, spesifikt at ordet "tall" faktisk betyr tallet 52.
+    var array = ["en", 2, "tre"]; //Definerer en array, som er en liste med string og/eller nummere.
+
+    // 1C
+    var btnA = document.getElementById("btnA");
+    var btnB = document.getElementById("btnB");
+    var btnC = document.getElementById("btnC");
+
+    btnA.onclick = function tallA() {
+        alert(Math.floor(1 + Math.random() * 7));
+    };
+
+    btnB.onclick = function tallB() {
+        alert(Math.floor(Math.random() * 11));
+    };
+
+    btnC.onclick = function tallC() {
+        alert(10 + Math.floor(Math.random() * 11));
+    };
+
+</script>
+
+
+</body>
+</html>

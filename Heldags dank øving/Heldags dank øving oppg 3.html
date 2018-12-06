@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+</head>
+<body>
+
+<p>3A) Hva skal stå i testene i if-setningene i koden under?</p>
+<p>if(tall > 5</p>
+<p>   document.write("Tallet er mindre enn 5")</p>
+<p>if tall == 5</p>
+<p>   document.write("Tallet er 5")</p>
+<p>if tall < 5</p>
+<p>   document.write("Tallet er større enn 5")</p>
+<br>
+<p>3B) Lag et program som skal gi millettprisen til en toppassasjer. Ha alderen til passasjeren som input.</p>
+<p>a. Hvis passasjeren er under 5 år, da reiser de gratis.</p>
+<p>   Hvis passasjeren er eldre enn 5, men yngre enn 18 reiser de med barnebillett som koster 30 kr.</p>
+<p>   Hvis passasjeren er myndig skal de kjøpe en voksenbillett som koster 70 kr.</p>
+
+<input id= "inpAlder" type="number" placeholder="Skriv inn din alder">
+<button id="btnAlder">Hvor mye koster bilett</button>
+<input type="checkbox" id="chckStudent"> Student
+<input type="checkbox" id="chckPensjon"> Pensjonist
+<div id="divAlder"></div>
+
+<br>
+<p>b. Myndige studenter får 20% rabatt. Pensjonister får 60% rabatt.</p>
+
+
+<script>
+
+    var inpAlder = document.getElementById("inpAlder");
+    var divAlder = document.getElementById("divAlder");
+    var btnAlder = document.getElementById("btnAlder");
+    var chckStudent = document.getElementById("chckStudent");
+    var chckPensjon = document.getElementById("chckPensjon");
+
+    btnAlder.onclick = function alder() {
+        if (inpAlder.value < 5) {
+            divAlder.innerHTML = ("Du reiser gratis");
+        }
+        else if (inpAlder.value > 5 && inpAlder.value < 18) {
+            divAlder.innerHTML = ("Biletten koster 30 kroner");
+        }
+        else {
+            if (chckStudent.checked){
+                divAlder.innerHTML = ("Biletten koster 54 kroner");
+            }
+            else if (chckPensjon.checked){
+                divAlder.innerHTML = ("Biletten koster 32 kroner");
+            }
+            else {
+                divAlder.innerHTML = ("Biletten koster 70 kroner");
+                }
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

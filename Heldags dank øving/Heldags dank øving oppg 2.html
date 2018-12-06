@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 2</title>
+</head>
+<body>
+
+<p>2A) Datatypen array brukes når vi vil lagre flere verdier i en variabel. Vi kan definere en variabel med datatypen array slik: var navn = ["Gunnhild", "Per", "Jens", "Nina"];</p>
+<p>a. Definer variabelen over, navn, i koden din, og bruk document.write(..) for å skrive ut Jens på nettsiden.</p>
+<button id="btnJens">Jens it up!</button>
+<br>
+<p>b. Legg til "Karsten" i arrayen navn</p>
+<button id="btnKarsten">Legg til Karsten</button>
+<br>
+<br>
+<p>2B) Datatypen objekt brukes når man ønsker å samle flere verdier eller egenskaper som hører naturlig sammen i en variabel.</p>
+<p>a. Definer tre objekter bruker1, bruker2 og bruker3, med egenskapene brukernavn og passord. (Finn på brukernavn og passord selv.)</p>
+<p>Se scripten</p>
+<p>b. Endre verdien brukernavn på bruker2 til et nytt brukernavn.</p>
+<button id="btnBruker">Endre brukernavn til bruker2</button>
+
+<script>
+
+    var navn = ["Gunnhild", "Per", "Jens", "Nina"];
+    var btnJens = document.getElementById("btnJens");
+    var btnKarsten = document.getElementById("btnKarsten");
+
+    btnJens.onclick = function Jens() {
+        document.write(navn[2]);
+        document.body.style.fontSize = 800;
+    }
+
+    btnKarsten.onclick = function Karsten() {
+        navn.push("Karsten");
+        alert("Karsten var lagt til :)");
+    }
+
+    var bruker1 = {
+        brukernavn: "xX_m3m3l0rd_Xx",
+        passord: "d4nkm3m3s";
+    }
+    var bruker2 = {
+        brukernavn: "PepsiMaxMann",
+        passord: "PepsiErKult";
+    }
+    var bruker3 = {
+        brukernavn: "KenM",
+        passord: "katteroghunder123";
+    }
+    var btnBruker = document.getElementById("btnBruker");
+
+    btnBruker.onclick = function Bruker() {
+        bruker2.brukernavn = "UtdatertPopkulturReferanse";
+    }
+
+</script>
+
+</body>
+</html>
