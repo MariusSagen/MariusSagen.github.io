@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+
+<p>a. Trykk her for å skrive ut Fight Club</p>
+<button id="btnFight">Skriv ut</button>
+<br>
+<p>b. Bytt ut filmen Matrix med Gudfaren</p>
+<button id="btnGud">Bytt ut</button>
+<br>
+<p>Liste over filmer:</p>
+<div id="film1"></div>
+
+<script>
+
+    const btnFight = document.getElementById("btnFight");
+    const btnGud = document.getElementById("btnGud");
+    var film1 = document.getElementById("film1");
+    var filmer = ["Pulp Fiction","Fight Club","Matrix","Forrest Gump"];
+
+    btnFight.onclick = function FightClub() {
+        document.write(filmer[1]);
+    }
+
+    document.getElementById("film1").innerHTML = filmer;
+
+    btnGud.onclick = function Gudfaren() {
+        filmer[2] = "Gudfaren";
+        document.getElementById("film1").innerHTML = filmer;
+    }
+
+</script>
+
+</body>
+</html>

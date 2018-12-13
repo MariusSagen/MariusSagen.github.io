@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+</head>
+<body>
+
+<style>
+
+    #termometer{
+        background-image: url("bilder/termometer.png");
+        height: 340px;
+        width: 170px;
+    }
+
+</style>
+
+<div id="termometer"></div>
+
+<p>Skriv inn fahrenheit og gjør det om til celsius</p>
+<input type="number" placeholder="Fahrenheit" id="inp">
+<button id="btn">Gjør om</button>
+<div id="div"></div>
+
+<script>
+
+    const inp = document.getElementById("inp");
+    const btn = document.getElementById("btn");
+    var div = document.getElementById("div");
+
+    btn.onclick = function Omgjøring() {
+        document.getElementById("div").innerHTML = Math.floor(inp.value - 32)*(5/9);
+    }
+
+</script>
+
+</body>
+</html>

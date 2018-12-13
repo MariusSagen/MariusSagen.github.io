@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 4</title>
+</head>
+<body>
+
+<p>a. Trykk på knappen for å få to terningkast</p>
+<button id="terning">Trykk</button>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="ekstra"></div>
+<p>Prøvde å få det til å ikke stå "Du fikk NaN" men fant ingen måte rundt det, problemet lå nok i det at jeg ikke hadde en ordentlig verdi som jeg kunne referere til i resten av programmet annet enn div1 og div2 / terning1 og terning2, dette hindret meg også i å vise bildene.</p>
+
+<script>
+
+    const terning = document.getElementById("terning");
+    var div1 = document.getElementById("div1");
+    var div2 = document.getElementById("div2");
+    var ekstra = document.getElementById("ekstra");
+    var terning1 = 0;
+    var terning2 = 0;
+
+    terning.onclick = function terningkast() {
+        terning1 = document.getElementById("div1").innerHTML = Math.floor(1 + Math.random() * 6);
+        terning2 = document.getElementById("div2").innerHTML = Math.floor(1 + Math.random() * 6);
+
+        if (terning1.value + terning2.value === 2) {
+            document.getElementById("ekstra").innerHTML = "Du fikk bare to denne gangen";
+        }
+        else if (terning1.value + terning2.value === 12) {
+            document.getElementById("ekstra").innerHTML = "Du fikk 12, gratulerer";
+        }
+        else {
+            document.getElementById("ekstra").innerHTML = "Du fikk " + (terning1.value + terning2.value);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 5</title>
+</head>
+<body>
+
+<style>
+
+    .containergranbo{
+        position: relative;
+        height: 400px;
+        width: 600px;
+        background-color: LightGray;
+        border: 14px solid white;
+        box-shadow: 0 0 1px DarkGray;
+        overflow: hidden;
+    }
+
+    .containergranbo > img{
+        position: absolute;
+        transform: scale(1);
+        transition: 0.5s 0.5s;
+    }
+
+    .containergranbo > arcticle{
+        position: center;
+        width: 80%;
+        height: 80%;
+        padding: 10%;
+        background-color: DarkGray;
+        text-align: center;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+
+    .containergranbo:hover > img{
+        transform: scale(0);
+        transition: 0.5s 0s;
+    }
+
+    .containergranbo:hover > article{
+        transform: scale(1);
+        transition: 0.5s 0.5s;
+    }
+
+    .containergranstua{
+        position: relative;
+        height: 400px;
+        width: 600px;
+        background-color: LightGray;
+        border: 14px solid white;
+        box-shadow: 0 0 1px DarkGray;
+        overflow: hidden;
+    }
+
+    .containergranstua > img{
+        position: absolute;
+        transform: scale(1);
+        transition: 0.5s 0.5s;
+    }
+
+    .containergranstua > arcticle{
+        position: center;
+        width: 80%;
+        height: 80%;
+        padding: 10%;
+        background-color: DarkGray;
+        text-align: center;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+
+    .containergranstua:hover > img{
+        transform: scale(0);
+        transition: 0.5s 0s;
+    }
+
+    .containergranstua:hover > article{
+        transform: scale(1);
+        transition: 0.5s 0.5s;
+    }
+
+</style>
+
+<p>Brukte :hover på CSS i stedet for :active fordi med :active så må man holde left-click nede, og jeg fant ingen måte for å få den til å være toggled</p>
+<p>Fikk heller ikke laget slideshow</p>
+
+<div class="containergranbo">
+    <img src="bilder/granbo.jpg">
+    <article class="infoGranbo">
+        <h1>Granbo</h1>
+        <hr>
+        <p>Sengeplasser: 6</p>
+        <p>Standard: Middels</p>
+    </article>
+</div>
+
+
+<div class="containergranstua">
+    <img src="bilder/granstua.jpg">
+    <article class="infoGranstua">
+        <h1>Granstua</h1>
+        <hr>
+        <p>Sengeplasser: 4</p>
+        <p>Standard: Høg</p>
+    </article>
+</div>
+
+
+</body>
+</html>
