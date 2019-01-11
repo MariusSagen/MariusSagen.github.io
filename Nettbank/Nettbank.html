@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nettbank</title>
+    <link rel="stylesheet" href="Nettbank.css">
+</head>
+<body>
+
+<main>
+
+    <div id="app">
+        <h2>DMB Nettbank</h2>
+        <div id="boks1">
+            <h4>Kroner i sparekonto:</h4>
+            <div id="divTeller1">0</div>
+        </div>
+        <br>
+        <div id="boks2">
+            <h4>Kroner i brukskonto:</h4>
+            <div id="divTeller2">0</div>
+        </div>
+        <div id="overfor1">
+            <h5>Sett inn eller ta ut NOK i brukskonto</h5>
+            <input type="number" id="inp" placeholder="Sum">
+            <br>
+            <button id="btnSettInn">Sett inn</button>
+            <button id="btnTaUt">Ta ut</button>
+        </div>
+        <div id="overfor2">
+            <h5>Overfør mellom kontoer</h5>
+            <p>Overfør fra</p>
+            <select size="2">
+                <option id="Brukskonto1">Brukskonto</option>
+                <option id="Sparekonto1">Sparekonto</option>
+            </select>
+            <p>Overfør til</p>
+            <select size="2">
+                <option id="Brukskonto2">Brukskonto</option>
+                <option id="Sparekonto2">Sparekonto</option>
+            </select>
+            <p>Antall NOK:</p>
+            <input id="inp2" type="number">
+            <button id="btn">Overfør</button>
+            <div id="feil"></div>
+        </div>
+    </div>
+
+</main>
+
+<script>
+
+    const app = document.getElementById("app");
+    const boks1 = document.getElementById("boks1");
+    const boks2 = document.getElementById("boks2");
+    const overfor1 = document.getElementById("overfor");
+    const btnSettInn = document.getElementById("btnSettInn");
+    const btnTaUt = document.getElementById("btnTaUt");
+    const inp = document.getElementById("inp");
+    const divTeller1 = document.getElementById("divTeller1");
+    const divTeller2 = document.getElementById("divTeller2");
+    const sel1 = document.getElementById("sel1");
+    const sel2 = document.getElementById("sel2");
+    const inp2 = document.getElementById("inp2");
+    const btn = document.getElementById("btn");
+    const feil = document.getElementById("feil");
+    const Brukskonto1 = document.getElementById("Brukskonto1");
+    const Sparekonto1 = document.getElementById("Sparekonto1");
+    const Brukskonto2 = document.getElementById("Brukskonto2");
+    const Sparekonto2 = document.getElementById("Sparekonto2");
+
+    let brukskonto = 0;
+    let sparekonto = 0;
+    
+    btnSettInn.onclick = function () {
+        brukskonto += Number(inp.value);
+        divTeller2.innerHTML = brukskonto;
+    }
+
+    btnTaUt.onclick = function () {
+        brukskonto -= Number(inp.value);
+        divTeller2.innerHTML = brukskonto;
+    }
+
+    btn.onclick = function () {
+        if (Brukskonto1.selected && Sparekonto2.selected){
+            sparekonto += Number(inp2.value);
+            brukskonto -= Number(inp2.value);
+            divTeller1.innerHTML = sparekonto;
+            divTeller2.innerHTML = brukskonto;
+        }
+        else if (Sparekonto1.selected && Brukskonto2.selected){
+            brukskonto += Number(inp2.value);
+            sparekonto -= Number(inp2.value);
+            divTeller1.innerHTML = sparekonto;
+            divTeller2.innerHTML = brukskonto;
+        }
+        else {
+            feil.innerHTML = "Feil i system";
+        }
+    }
+
+</script>
+
+</body>
+</html>
