@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 2</title>
+</head>
+<body>
+
+<ol id="bøker"></ol>
+
+<script>
+
+    let bokliste = ["Animal Farm", "Ready Player One", "The Shining", "Harry Potter", "Sult"];
+    let bøker = document.getElementById("bøker");
+
+    bokliste.sort();
+
+    for (let bok of bokliste){
+        bøker.innerHTML += "<li>" + bok + "</li>";
+    }
+
+</script>
+
+</body>
+</html>

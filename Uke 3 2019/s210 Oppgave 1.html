@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+
+<ol id="matliste1"></ol>
+
+<ul id="matliste2"></ul>
+
+<script>
+
+    let matvarer = ["ost", "brød", "paprika", "kaviar"];
+    let matliste1 = document.getElementById("matliste1");
+    let matliste2 = document.getElementById("matliste2");
+
+    for (let mat1 of matvarer){
+        console.log(mat1);
+        matliste1.innerHTML += "<li>" + mat1 + "</li>";
+    }
+
+    for (var i=0;i<matvarer.length; i++){
+        var mat2 = matvarer[i];
+        matliste2.innerHTML += "<li>" + mat2 + "</li>";
+    }
+
+</script>
+
+</body>
+</html>
