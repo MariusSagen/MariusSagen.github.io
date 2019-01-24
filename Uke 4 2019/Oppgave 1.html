@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeg trenger hjelp</title>
+</head>
+
+<style>
+
+    body{
+        background-color: bisque;
+        height: 100%;
+    }
+    #app{
+        background-color: antiquewhite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: solid 2px black;
+    }
+    #boks1{
+        border: solid 1px black;
+    }
+
+</style>
+
+<body>
+
+<div id="app">
+    <h1>Jeg trenger hjelp-appen!</h1>
+
+    <input type="text" id="inpNavn" placeholder="Hva er ditt navn?">
+    <br>
+    <input type="text" id="inpHjelp" placeholder="Ditt problem">
+    <br>
+    <button id="btn">Jeg trenger hjelp!</button>
+    <br>
+    <div id="boks1">
+        <div id="navn"></div>
+    </div>
+    <br>
+</div>
+
+<script>
+
+    let inpNavn = document.getElementById("inpNavn");
+    let inpHjelp = document.getElementById("inpHjelp");
+    let btn = document.getElementById("btn");
+    let navn = document.getElementById("navn");
+
+    let liste = [];
+
+    btn.onclick = function f() {
+        liste.push({
+            Navn: inpNavn.value,
+            Problem: inpHjelp.value
+        });
+
+        console.log(liste);
+        navn.innerHTML = "";
+
+        for (let navnL of liste){
+            navn.innerHTML += `<p>Navn: ${navnL.Navn}</p>
+                            <p>Problem: ${navnL.Problem}</p>`
+       }
+    }
+
+</script>
+
+</body>
+</html>

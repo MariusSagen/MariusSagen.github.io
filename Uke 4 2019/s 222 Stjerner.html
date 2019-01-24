@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stjerner</title>
+</head>
+
+<style>
+
+    body {
+        height: 100%;
+        background-color: midnightblue;
+    }
+    .stjerne1{
+        position: absolute;
+        background-color: yellow;
+        border-radius: 50%;
+    }
+    .stjerne2{
+        position: absolute;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .stjerne3{
+        position: absolute;
+        background-color: green;
+        border-radius: 50%;
+    }
+
+</style>
+
+<body>
+
+<script>
+
+    for (var i=0;i<20000;i++){
+        var stjerne1 = document.createElement("div");
+        stjerne1.className = "stjerne1";
+        stjerne1.style.left = Math.random()*innerWidth+"px";
+        stjerne1.style.top = Math.random()*innerHeight+"px";
+        stjerne1.style.width = Math.random()*3+"px";
+        stjerne1.style.height = stjerne1.style.width;
+        document.body.appendChild(stjerne1);
+    }
+    for (var i=0;i<20000;i++){
+        var stjerne2 = document.createElement("div");
+        stjerne2.className = "stjerne2";
+        stjerne2.style.left = Math.random()*innerWidth+"px";
+        stjerne2.style.top = Math.random()*innerHeight+"px";
+        stjerne2.style.width = Math.random()*3+"px";
+        stjerne2.style.height = stjerne2.style.width;
+        document.body.appendChild(stjerne2);
+    }
+    for (var i=0;i<20000;i++){
+        var stjerne3 = document.createElement("div");
+        stjerne3.className = "stjerne3";
+        stjerne3.style.left = Math.random()*innerWidth+"px";
+        stjerne3.style.top = Math.random()*innerHeight+"px";
+        stjerne3.style.width = Math.random()*3+"px";
+        stjerne3.style.height = stjerne3.style.width;
+        document.body.appendChild(stjerne3);
+    }
+
+</script>
+
+</body>
+</html>

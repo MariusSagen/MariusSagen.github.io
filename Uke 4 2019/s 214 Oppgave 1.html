@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+<body>
+
+
+
+<script>
+
+    var lander = new Set(["Norge", "Khazakstan", "Uganda", "Russland"]);
+    lander.add("Spania");
+    if (lander.has("Uganda")){
+        lander.delete("Uganda");
+    }
+    for (var land of lander){
+        document.write("<li>" + land + " er et kult land" + "</li>");
+    }
+
+</script>
+
+</body>
+</html>
