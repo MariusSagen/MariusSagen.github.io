@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cssTransOgJava</title>
+
+    <style>
+
+        body{
+            transition: 1s;
+        }
+
+        #firkant{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<input type="color" id="inpFarge">
+<div id="firkant"></div>
+
+<script>
+
+    let inpFarge = document.querySelector("#inpFarge");
+    let firkant = document.querySelector("#firkant");
+
+    inpFarge.oninput = function () {
+        firkant.style.backgroundColor = inpFarge.value;
+    }
+
+</script>
+
+</body>
+</html>

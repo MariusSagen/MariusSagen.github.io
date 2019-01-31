@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 2</title>
+</head>
+<body>
+
+<h1 id="skrift">Overskrift ROFLMAO</h1>
+
+<script>
+
+    let skrift = document.getElementById("skrift");
+
+    skrift.style.width = "300px";
+    skrift.style.margin = "auto";
+    skrift.style.transition = "0.3s";
+
+    skrift.onmouseover = function () {
+        skrift.style.transform = "scale(3)";
+    }
+
+    skrift.onmouseleave = function () {
+        skrift.style.transform = "scale(1)";
+    }
+
+</script>
+
+</body>
+</html>

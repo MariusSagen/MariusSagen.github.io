@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            border: 2px solid gray;
+            border-bottom: none;
+            width: 180px;
+            height: 400px;
+            margin: 10px auto;
+            position: relative;
+        }
+        #boet {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            top: 10px;
+            left: 10px;
+        }
+        #boet div {
+            position: absolute;
+            border-radius: 50%;
+        }
+        #blue {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #2135f6;
+        }
+        #white {
+            width: 66%;
+            height: 66%;
+            top: 16.5%;
+            left: 16.5%;
+            background-color: white;
+        }
+        #red {
+            background-color: #d92a22;
+            width: 33%;
+            height: 33%;
+            top: 33.5%;
+            left: 33.5%;
+        }
+
+        #white_inner {
+            background-color: white;
+            width: 10%;
+            height: 10%;
+            left: 45%;
+            top: 45%;
+        }
+
+        .stein {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+        #stein01 {
+            background-color: red;
+            left: 80px;
+            top: 380px;
+            animation: ani1 6s forwards;
+        }
+        #stein02 {
+            background-color: lightgreen;
+            left: 60px;
+            top: 130px;
+            animation: ani2 2s 2.5s forwards;
+        }
+
+        @keyframes ani1{
+            0% {
+                left: 80px;
+                top: 380px;
+            }
+            50% {
+                left: 70px;
+                top: 138px;
+            }
+            100%{
+                left: 77px;
+                top: 132px;
+            }
+        }
+
+        @keyframes ani2 {
+            0%{
+                left: 60px;
+                top: 130px;
+            }
+            100%{
+                left: 50px;
+                top: 100px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<main>
+    <div id="boet">
+        <div id="blue"></div>
+        <div id="white"></div>
+        <div id="red"></div>
+        <div id="white_inner"></div>
+    </div>
+
+    <div id="stein01" class="stein"></div>
+    <div id="stein02" class="stein"></div>
+</main>
+
+</body>
+</html>

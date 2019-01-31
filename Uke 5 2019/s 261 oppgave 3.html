@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+
+    <style>
+
+        #div{
+            position: absolute;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="div"></div>
+
+<script>
+
+    let div = document.querySelector("#div");
+
+    div.style.position = "absolute";
+    div.style.height = "50px";
+    div.style.width = "50px";
+    div.style.backgroundColor = "red";
+
+    div.style.left = "50px";
+    div.style.top = "50px";
+
+    window.onclick = function(event){
+        console.log(event.x);
+        div.style.left = event.x +"px";
+        div.style.top = event.y + "px";
+        div.style.transform = "translate(-50%,-50%)";
+    }
+</script>
+
+</body>
+</html>

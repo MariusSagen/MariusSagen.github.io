@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilde erstattes av tekst</title>
+
+    <style>
+
+        .container{
+            margin-top: 10%;
+            left: 35%;
+            position: relative;
+            width: 400px;
+            height: 300px;
+            background-color: black;
+            border: 14px solid white;
+            box-shadow: 0 0 1px DarkGray;
+            overflow: hidden;
+        }
+
+        .container > img{
+            position: absolute;
+            transform: scale(1);
+            transition: 0.5s 0.5s;
+        }
+
+        .container > article{
+            position: absolute;
+            height: 80%;
+            width: 80%;
+            padding: 10%;
+            background: crimson;
+            color: white;
+            text-align: center;
+            transform: scale(0);
+            transition: 0.5s 0.5s;
+        }
+
+        .container:hover > img{
+            transform: scale(0);
+            transition: 0.5s 0.5s;
+        }
+
+        .container:hover > article{
+            transform: scale(1);
+            transition: 0.5s 0.5s;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <img src="7lakrt8ehed21%20copy.jpg">
+    <article class="erna">
+        <h1>Lil' Erna</h1>
+        <hr>
+        <p>Lil' Erna er en up-and-comming rapper som legger ut sin musikk på Facebook</p>
+        <a href="#">Ikke les mer</a>
+    </article>
+</div>
+
+</body>
+</html>

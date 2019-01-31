@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilde flyr over skjerm</title>
+
+    <style>
+
+        body{
+            background-image: url("gorbys copy.jpg");
+            height: 100%;
+        }
+        
+        @keyframes animasjon{
+            0%{
+                left: -30%;
+                bottom: 0;
+                transform: rotate(0grad);
+            }
+            25%{
+                left: 30%;
+                bottom: 20;
+                transform: rotate(360grad);
+            }
+            50%{
+                left: 50%;
+                bottom: 50;
+                transform: rotate(720grad);
+            }
+            75%{
+                left: 80%;
+                bottom: 20;
+                transform: rotate(1080grad);
+            }
+            100%{
+                left: 200%;
+                bottom: 0;
+                transform: rotate(1440grad);
+            }
+        }
+
+        .gutt{
+            position: absolute;
+            animation: animasjon 5s infinite;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<img class="gutt" src="1535354972977%20copy.jpg" alt="">
+
+</body>
+</html>
