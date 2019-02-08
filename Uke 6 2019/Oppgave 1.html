@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+</head>
+
+<style>
+
+    img{
+        height: 300px;
+        width: 300px;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+
+<h1 id="skrift">
+    Dette er en KUL overskrift
+</h1>
+
+<button id="btnPause">Pause</button>
+<button id="btnPlay">Play</button>
+<button id="btnReverse">Reverse</button>
+<br>
+<input type="range" id="slider" min="0.1" max="5" step="0.1">
+
+<img id="gorbys" src="gorbys%20copy.jpg" alt="">
+
+<script>
+
+    const skrift = document.querySelector("#skrift");
+
+    const btnPause = document.getElementById("btnPause");
+    const btnPlay = document.getElementById("btnPlay");
+    const btnReverse = document.getElementById("btnReverse");
+    const slider = document.getElementById("slider");
+
+    let skriftstil = [
+        {
+            left: "500px",
+            top: "50px",
+            opacity: 0
+        },
+        {
+            left: "500px",
+            top: "50px",
+            opacity: 1
+        }
+    ];
+
+    let skriftegenskaper = {
+        duration: 4000,
+        fill: "forwards"
+    };
+
+    const gorbys = document.querySelector("#gorbys");
+
+    let gorbystil = [
+        {
+            left: "-400px",
+            top: "100px",
+            transform: "rotate(0deg)"
+        },
+        {
+            left: "500px",
+            top: "400px",
+            transform: "rotate(360deg)"
+        },
+        {
+            left: "1000px",
+            top: "450px",
+            transform: "rotate(1080deg)"
+        }
+    ];
+
+    let gorbysegenskaper = {
+        duration: 2000,
+        direction: "alternate",
+        iterations: Infinity,
+        easing: "ease-in-out",
+        fill: "forwards"
+    };
+
+
+    skrift.animate(skriftstil,skriftegenskaper);
+
+    let aniGorbys = gorbys.animate(gorbystil,gorbysegenskaper);
+
+    btnPause.onclick = function (pause) {
+        aniGorbys.pause()
+    };
+    btnPlay.onclick = function (play) {
+        aniGorbys.play()
+    };
+    btnReverse.onclick = function (reverse) {
+        aniGorbys.reverse()
+    };
+
+    /*
+    aniGorbys.pause();
+    aniGorbys.play();
+    aniGorbys.reverse();
+    */
+
+    slider.onchange = function (playback) {
+        aniGorbys.playbackRate = slider.value;
+    }
+
+</script>
+
+</body>
+</html>

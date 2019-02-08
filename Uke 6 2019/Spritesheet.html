@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spritesheet</title>
+
+    <style>
+
+        #container{
+            width: 213.33px;
+            height: 213;
+            overflow: hidden; /* skjuler alt utenfor div-en */
+            position: relative;
+        }
+
+        img{
+            position: absolute;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="container">
+    <img src="sprite%20stor.png" id="sprite" alt="">
+</div>
+
+<script>
+
+    const sprite = document.querySelector("#sprite");
+
+    let spriteCSS = [
+        {
+            left: "0%"
+        },
+        {
+            left: "-600%"
+        }
+    ];
+
+    let spriteEgenskaper = {
+        duration: 1500,
+        iterations: Infinity,
+        easeing: "steps(6)"
+    };
+
+    sprite.animate(spriteCSS,spriteEgenskaper);
+
+</script>
+
+</body>
+</html>

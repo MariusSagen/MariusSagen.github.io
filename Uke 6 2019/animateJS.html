@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animateJS</title>
+</head>
+
+<style>
+
+    img{
+        height: 200px;
+        width: auto;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+
+<img id="lol" src="Screen%20Shot%202017-10-09%20at%2013.10.05%20copy.png" alt="">
+
+<script>
+
+    const lol = document.querySelector("#lol");
+
+    let lolstil = [
+        {
+            left:"0px",
+            top:"0px"
+        },
+        {
+            left:"300px",
+            top:"500px"
+        }
+    ];
+
+    let lolegenskaper = {
+        duration: 3000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 5,
+        fill: "forwards"
+    }
+
+    lol.animate(lolstil,lolegenskaper);
+
+
+</script>
+
+</body>
+</html>
