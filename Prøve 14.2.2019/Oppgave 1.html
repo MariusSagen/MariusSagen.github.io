@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+
+    <style>
+
+        body{
+            background-color: white;
+        }
+
+        #div1 {
+            background-color: #d92a22;
+            height: 100px;
+            width: 100px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        #div2 {
+            background-color: #d9d035;
+            height: 100px;
+            width: 100px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            position: relative;
+        }
+        #div3 {
+            background-color: #00d907;
+            height: 100px;
+            width: 100px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            position: relative;
+        }
+        #div4 {
+            background-color: #000cd9;
+            height: 100px;
+            width: 100px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+
+<div id="div2"></div>
+
+<div id="div3"></div>
+
+<div id="div4"></div>
+
+
+<script>
+
+    const div1 = document.getElementById("div1");
+    const div2 = document.getElementById("div2");
+    const div3 = document.getElementById("div3");
+    const div4 = document.getElementById("div4");
+
+    let div1stil = [
+        {
+            transformOrigin: "right bottom",
+            transform: "rotate(0deg)"
+        },
+        {
+            transformOrigin: "right bottom",
+            transform: "rotate(90deg)"
+        }
+    ];
+
+    let div1egenskaper = {
+        duration: 1000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+    let div2stil = [
+        {
+            transform: "rotate(0deg)"
+        },
+        {
+            transform: "rotate(60deg)"
+        }
+    ];
+
+    let div2egenskaper = {
+        duration: 1000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+    let div3stil = [
+        {
+            transform: "scale(1)"
+        },
+        {
+            transform: "scale(2)"
+        }
+    ];
+
+    let div3egenskaper = {
+        duration: 1000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+    let div4stil = [
+        {
+            marginLeft: "20px"
+        },
+        {
+            marginLeft: "1330px"
+        }
+    ];
+
+    let div4egenskaper = {
+        duration: 1000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+
+    div1.onmouseover = function () {
+        div1.animate(div1stil,div1egenskaper)
+    }
+
+    div2.onmouseover = function () {
+        div2.animate(div2stil,div2egenskaper)
+    }
+
+    div3.onmouseover = function () {
+        div3.animate(div3stil,div3egenskaper)
+    }
+
+    div4.onmouseover = function () {
+        div4.animate(div4stil,div4egenskaper)
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 2</title>
+</head>
+<body>
+
+<input type="number" id="inp" placeholder="Skriv inn NOK">
+<br>
+<button id="GBP">Gjør om til GBP</button>
+<button id="USD">Gjør om til USD</button>
+<button id="SEK">Gjør om til SEK</button>
+<br>
+<div id="div"></div>
+
+<script>
+
+    const inp = document.getElementById("inp");
+    const GBP = document.getElementById("GBP");
+    const USD = document.getElementById("USD");
+    const SEK = document.getElementById("SEK");
+    const div = document.getElementById("div");
+
+    GBP.onclick = function () {
+        div.innerHTML = inp.value + " NOK er " + inp.value*0.089 + " i GBP";
+    }
+
+    USD.onclick = function () {
+        div.innerHTML = inp.value + " NOK er " + inp.value*0.11 + " i USD";
+    }
+
+    SEK.onclick = function () {
+        div.innerHTML = inp.value + " NOK er " + inp.value*1.07 + " i SEK";
+    }
+
+</script>
+
+</body>
+</html>

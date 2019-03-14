@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+    <style>
+        #firkant{
+            width: 200px;
+            height: 200px;
+            background-color: #00d907;
+            position: absolute;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="divPoeng"> Poeng: 0</div>
+<div id="firkant"></div>
+
+<script>
+
+    // Referanse til HTML elementer
+    const divPoeng = document.querySelector("#divPoeng");
+    const firkant = document.querySelector("#firkant");
+
+    // Globale variabler
+    let poeng = 0;
+
+    // Hendelseslyttere
+    firkant.onclick = gameloop;
+
+    // Funksjonsdefinisjoner
+    function merPoeng() {
+        poeng += 10;
+        divPoeng.innerHTML = "Poeng: " + poeng
+    }
+    function flytt() {
+        firkant.style.left = Math.random()*window.innerHeight + "px";
+        firkant.style.top = Math.random()*window.innerWidth + "px";
+    }
+
+    function gameloop() {
+        flytt();
+        merPoeng();
+    }
+
+</script>
+
+</body>
+</html>

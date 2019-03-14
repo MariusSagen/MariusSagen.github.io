@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="canvas" width="400px" height="200px"></canvas>
+
+<script>
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+
+    /*
+    ctx.fillStyle = "red";
+    ctx.fillRect(10,10,20,40);
+    */
+
+            //Globale variabler
+    let firkant = {
+        bredde: 20,
+        hoyde: 30,
+        farge: "blue",
+        xpos: 10,
+        ypos: 20,
+        xfart: 0,
+        yfart: 0,
+        xretning: 0,
+        yretning: 0
+    };
+    let firkant2 = {
+        bredde: 20,
+        hoyde: 30,
+        farge: "blue",
+        xpos: 10,
+        ypos: 20,
+        xfart: 0,
+        yfart: 0,
+        xretning: 0,
+        yretning: 0
+    };
+
+            //Setup
+    gameloop();
+    tegnFirkant(firkant);
+
+            //Funksjonsdefinisjoner
+    function gameloop() {
+        tegnFirkant();
+        fjernFirkant(firkant);
+        flytt();
+        requestAnimationFrame(gameloop);
+    }
+    function flytt(figur) {
+        figur.xpos = figur.xpos + (firkant.xretning*firkant.xfart);
+    }
+
+    function tegnFirkant(figur) {
+        ctx.fillStyle = figur.farge;
+        ctx.fillRect(figur.xpos,figur.ypos,figur.bredde,figur.hoyde);
+    }
+    function fjern(figur) {
+        ctx.clearRect(figur.xpos,figur.ypos,figur.bredde,figur.hoyde);
+    }
+    function clear() {
+        ctx.fillStyle = "white";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+    }
+    function sjekk(figur) {
+        if (figur.xpos >= canvas.width){
+            figur.xretning = figur.xretning * -1;
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

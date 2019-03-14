@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url("vedlegg/earth.png");
+        background-size: 100% auto;
+    }
+
+    #rakett{
+        height: 373px;
+        width: auto;
+        left: 50%;
+        top: 40%;
+        position: absolute;
+    }
+    #moon{
+        height: 100%;
+        width: 100%;
+        top: -1000%;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+
+<img id="moon" src="vedlegg/moon.png" alt="">
+
+<img id="rakett" src="vedlegg/spaceX.png" alt="">
+
+
+<button id="btn">TAKE-OFF</button>
+
+<script>
+
+    const rakett = document.querySelector("#rakett");
+    const btn = document.getElementById("btn");
+    const moon = document.getElementById("moon");
+
+    let moonstil = [
+        {
+            top:"-1000%",
+            left:"0%"
+        },
+        {
+            top:"0%",
+            left:"0%"
+        }
+        ];
+
+    let moonegenskaper = {
+        delay: 5000,
+        duration: 1,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+    let rakettstil = [
+        {
+            left:"50%",
+            top:"40%"
+        },
+        {
+            left:"50%",
+            top:"-120%"
+        },
+        {
+            left:"50%",
+            top:"40%"
+        }
+    ];
+
+    let rakettegenskaper = {
+        duration: 10000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        iterations: 1,
+        fill: "forwards"
+    }
+
+    btn.onclick = function () {
+        rakett.animate(rakettstil, rakettegenskaper);
+        moon.animate(moonstil, moonegenskaper);
+
+    }
+
+</script>
+
+
+</body>
+</html>
