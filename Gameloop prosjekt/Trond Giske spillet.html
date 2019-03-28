@@ -5,27 +5,68 @@
     <title>Trond Giske spillet</title>
     <style>
 
-        #wrapper{
+        #spill{
             border: dimgrey 6px solid;
             width: 750px;
             height: 750px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 23%;
             margin-top: 2%;
-            background-color: lightgray;
+            background-color: lightblue;
         }
-        #spill{
-            width: 750px;
-            height: 750px;
-            background-color: lightgray;
+
+        .blink {
+            -webkit-animation: blink .75s linear infinite;
+            -moz-animation: blink .75s linear infinite;
+            -ms-animation: blink .75s linear infinite;
+            -o-animation: blink .75s linear infinite;
+            animation: blink .75s linear infinite;
         }
+        @-webkit-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        @-moz-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        @-ms-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        @-o-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        #gameover{
+            font-size: 300%;
+            position: fixed;
+            color: red;
+            margin-left: 40%;
+            margin-top: 30%;
+        }
+
     </style>
 </head>
 <body>
 
-<div id="wrapper">
     <canvas id="spill"></canvas>
-</div>
+
+    <div id="gameover" class="blink"></div>
 
 <script src="Trond%20Giske%20JS.js"></script>
 

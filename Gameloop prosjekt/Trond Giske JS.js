@@ -5,8 +5,7 @@ var GameOn = true;
 var bane = {
     bredde: spill.width,
     hoyde: spill.height,
-    bgfarge: "lightgray",
-
+    bgfarge: "lightblue"
 };
 
 var giske = {
@@ -29,6 +28,9 @@ var racket = {
     "yretning": 0,
     "yfart": 5
 };
+
+var latter = new Audio();
+latter.src = "OndLatter.mp3";
 
 function tegnBane() {
     console.log("Tegner opp banen");
@@ -79,7 +81,7 @@ function sjekkOmGiskeTrefferVegg() {
 
 function sjekkOmGiskeTrefferRacket() {
     console.log("Sjekker om Giske treffer racket");
-    var giskeErTilVenstre = giske.xpos + giske.radius < racket.bredde;
+    var giskeErTilVenstre = giske.xpos + giske.radius < racket.xpos;
     var giskeErTilHoyre = giske.xpos - giske.radius > racket.xpos + racket.bredde;
     var giskeErOver = giske.ypos + giske.radius < racket.ypos;
     var giskeErUnder = giske.ypos - giske.radius > racket.ypos + racket.hoyde;
@@ -90,8 +92,10 @@ function sjekkOmGiskeTrefferRacket() {
 
 function sjekkOmGiskeTrefferJente() {
     console.log("Sjekker om Giske treffer jente");
-    if (giske.x > bane.bredde + giske.radius*2) {
+    if (giske.xpos > bane.bredde + giske.radius*2) {
         GameOn = false;
+        latter.play();
+        setTimeout(function (){document.write("DU HAR BLITT TAFSET PÅ!!!");}, 3000);
     }
 }
 
@@ -129,4 +133,3 @@ function gameLoop() {
 }
 
 gameLoop();
-
