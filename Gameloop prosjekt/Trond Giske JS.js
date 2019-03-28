@@ -1,44 +1,55 @@
 var spill = document.getElementById("spill");
-var ctx = spill.getContext("2d");
+var ctx = spill.getContext("2d");               //Hvor mange dimensjoner banen er i; 2
 var GameOn = true;
 
-var bane = {
+var bane = {                //Definerer Banen
     bredde: spill.width,
     hoyde: spill.height,
     bgfarge: "lightblue"
 };
 
-var giske = {
+var giske = {               //Definerer giske
     radius: 5,
     xpos: 100,
     ypos: 100,
-    farge: "yellow",
+    farge: "lightblue",
     xretning: -1,
     yretning: 1,
-    xfart: 4,
-    yfart: 4
+    xfart: 1,
+    yfart: 1,
+    bredde: 25,
+    hoyde: 25
 };
 
-var racket = {
+var giskebilde = new Image;
+giskebilde.src = "vedlegg/giskegris.png";
+
+var pepperspray = new Image;
+pepperspray.src = "vedlegg/pepperspray.png";
+
+var kvinne = new Image;
+kvinne.src = "vedlegg/standing woman.png";
+
+var racket = {              //Definerer racketen
     "bredde": 10,
-    "hoyde": 50,
-    "farge": "White",
+    "hoyde": 40,
+    "farge": "lightblue",
     "xpos": bane.bredde - 15,
     "ypos": bane.hoyde / 2,
     "yretning": 0,
-    "yfart": 5
+    "yfart": 3
 };
 
-var latter = new Audio();
+const latter = new Audio();        //Latter
 latter.src = "OndLatter.mp3";
 
-function tegnBane() {
+function tegnBane() {                                   //Oppdaterer banen
     console.log("Tegner opp banen");
     ctx.fillStyle = bane.bgfarge;
     ctx.fillRect(0, 0, bane.bredde, bane.hoyde);
 }
 
-function tegnGiske() {
+function tegnGiske() {                                  //Oppdaterer Trond Giske
     console.log("Tegner opp Giske");
     ctx.beginPath();
     ctx.arc(giske.xpos, giske.ypos, giske.radius, 0, Math.PI*2);
@@ -47,16 +58,14 @@ function tegnGiske() {
     ctx.fill();
     giske.xpos = giske.xpos + giske.xfart*giske.xretning;
     giske.ypos = giske.ypos + giske.yfart*giske.yretning;
-}
-
-function tegnJente() {
-    console.log("Tegner opp jente");
+    ctx.drawImage(giskebilde, giske.xpos - giske.hoyde/2, giske.ypos - giske.bredde/2, giske.bredde, giske.hoyde)
 }
 
 function tegnRacket() {
     console.log("Tegner opp racket");
     ctx.fillStyle= racket.farge;
     ctx.fillRect(racket.xpos, racket.ypos, racket.bredde, racket.hoyde);
+    ctx.drawImage(pepperspray, racket.xpos - racket.hoyde/1.3, racket.ypos - racket.bredde/3, racket.bredde + 60, racket.hoyde + 10);
     if (racket.ypos <= 0 && racket.yretning === -1){
         return;
     }
@@ -72,10 +81,10 @@ function sjekkOmGiskeTrefferVegg() {
         giske.xretning = 1;
     }
     if (giske.ypos + giske.radius >= bane.hoyde){
-        giske.yretning = -1;
+        giske.yretning = -1.2;
     }
     if (giske.ypos <= giske.radius){
-        giske.yretning = 1;
+        giske.yretning = 1.3;
     }
 }
 
@@ -87,6 +96,8 @@ function sjekkOmGiskeTrefferRacket() {
     var giskeErUnder = giske.ypos - giske.radius > racket.ypos + racket.hoyde;
     if (!giskeErTilVenstre && !giskeErTilHoyre && !giskeErOver && !giskeErUnder){
         giske.xretning = -1;
+        giske.xfart += 0.5;
+        giske.yfart += 0.5;
     }
 }
 
@@ -95,7 +106,11 @@ function sjekkOmGiskeTrefferJente() {
     if (giske.xpos > bane.bredde + giske.radius*2) {
         GameOn = false;
         latter.play();
-        setTimeout(function (){document.write("DU HAR BLITT TAFSET PÅ!!!");}, 3000);
+        setTimeout(function (){
+            document.body.appendChild(document.createElement('p'));
+            document.querySelector("body p:last-child").id = "gameover";
+            document.getElementById("gameover").innerHTML = "DU HAR BLITT TAFSET PÅ!";
+        }, 3000);
     }
 }
 
@@ -122,7 +137,6 @@ document.onkeyup = function (evt) {
 function gameLoop() {
     tegnBane();
     tegnGiske();
-    tegnJente();
     tegnRacket();
     sjekkOmGiskeTrefferVegg();
     sjekkOmGiskeTrefferRacket();
