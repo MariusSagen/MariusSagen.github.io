@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 8</title>
+</head>
+<body>
+
+<h5>Velg ditt hotell:</h5>
+<select id="velgHotell">
+    <option value="Spidsbergseter">Spidsbergseter</option>
+    <option value="Rondablikk">Rondablikk</option>
+    <option value="RondaneSpa">Rondane Spa</option>
+    <option value="Brekkeseter">Brekkeseter</option>
+    <option value="Hjerkinn">Hjerkinn</option>
+</select>
+
+<div class = "hotellInfo">
+</div>
+
+</body>
+
+<script>
+
+    const velgHotell = document.querySelector("#velgHotell");
+    const hotellInfo = document.querySelector(".hotellInfo");
+
+    class Hotell{
+        constructor(navn,tlf,epost,bilde,temp){
+            this.navn = navn;
+            this.tlf = tlf;
+            this.epost = epost;
+            this.bilde = bilde;
+            this.temp = temp;
+        }
+
+        get gjTemp(){
+            let tot = 0;
+            for(let tall of this.temp){
+                tot += tall;
+            }
+            return tot/this.temp.length;
+        }
+
+        get maxTemp(){
+            let maks = -Infinity;
+            for(let tall of this.temp){
+                if(tall > maks){
+                    maks = tall;
+                }
+            }
+            return maks;
+        }
+
+        get minTemp(){
+            let min = Infinity;
+            for(let tall of this.temp){
+                if(tall < min){
+                    min = tall;
+                }
+            }
+            return min;
+        }
+
+        get tempSoyler(){
+            let html = ``;
+            for(let tall of this.temp){
+                let farge;
+                if(tall < 1){
+                    farge = "blue";
+                }
+                else{
+                    farge = "red";
+                }
+                html += `<div style="height:${tall*10+200}px; background-color:${farge};" class="soyle"><p>${tall}</p></div>`;
+            }
+            return html;
+        }
+
+        get info(){
+            let html = `
+    <div>
+      <h2>${this.navn}</h2>
+      <img src="${this.bilde}">
+      <p>Telefon: ${this.tlf}</p>
+      <p>E-post: ${this.epost}</p>
+    </div>
+    <h3>Temperatur siste 7 dager</h3>
+    <p>Gjennomsnitt: ${this.gjTemp}</p>
+    <p>Maks: ${this.maxTemp}</p>
+    <p>Min: ${this.minTemp}</p>
+    <div class="tempSoyler">
+      ${this.tempSoyler}
+    </div>
+
+    `;
+            return html;
+        }
+    }
+
+    let Spidsbergseter = new Hotell("Spidsbergseter",61284000,"post@sgh.no","FilerH2010Hoteller/spidsbergseter.jpg",[-5,-3,-2,0,2,3]);
+    let Rondablikk = new Hotell("Rondablikk",61294940,"post@rondablikk.no","FilerH2010Hoteller/rondablikk.jpg",[-8,-5,-5,-3,-3,-3]);
+    let RondaneSpa = new Hotell("Rondane SPA",61209090,"post@rondane.no","FilerH2010Hoteller/rondaneSPA.jpg",[-10,-8,-8,-5,-5,-4]);
+    let Brekkeseter = new Hotell("Brekkeseter",61233711,"post@brekkeseter.no","FilerH2010Hoteller/brekkeseter.jpg",[-9,-7,-5,-5,-2,0]);
+    let Hjerkinn = new Hotell("Hjerkinn",61215100,"fjellstua@hjerkinn.no","FilerH2010Hoteller/hjerkinn.jpg",[-12,-10,-9,-9,-7,-7]);
+
+    let hoteller = [Spidsbergseter,Rondablikk,RondaneSpa,Brekkeseter,Hjerkinn];
+
+    function skrivHotellInfo(){
+        for(let hotell of hoteller){
+            if (velgHotell.value === hotell.navn){
+                hotellInfo.innerHTML = hotell.info;
+            }
+        }
+    }
+
+    velgHotell.onchange = skrivHotellInfo;
+
+
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vindmølle</title>
+    <style>
+
+        #bg{
+            height: 2000px;
+            width: 2000px;
+            position: static;
+            -webkit-animation: colorchange 1ms infinite alternate;
+        }
+
+        #div{
+            height: 300px;
+            width: 500px;
+            position: absolute;
+            left: 32%;
+            top: 25%;
+            background-color: lawngreen;
+            text-align: center;
+            font-family: Futura;
+            font-weight: bold;
+        }
+
+
+        @-webkit-keyframes colorchange {
+            0% {
+
+                background-color: blue;
+            }
+
+            10% {
+
+                background-color: #8e44ad;
+            }
+
+            20% {
+
+                background-color: #1abc9c;
+            }
+
+            30% {
+
+                background-color: #d35400;
+            }
+
+            40% {
+
+                background-color: yellow;
+            }
+
+            50% {
+
+                background-color: #34495e;
+            }
+
+            60% {
+
+                background-color: red;
+            }
+
+            70% {
+
+                background-color: #2980b9;
+            }
+            80% {
+
+                background-color: #f1c40f;
+            }
+
+            90% {
+
+                background-color: #2980b9;
+            }
+
+            100% {
+
+                background-color: pink;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="div">
+    <h3>Wattproduksjon per time</h3>
+    <br>
+    <p>Regn ut hvor mye watt blir produsert lolol</p>
+    <p>Regnestykket funker ikke utenfor 2.5 - 15 m/s, fuck deg</p>
+    <p>Skriv inn vindstyrke i m/s</p>
+    <input type="text" id="inpVind" placeholder="Skriv inn her">
+    <button id="btnVind">Skriv ut</button>
+    <div id="divVind"></div>
+</div>
+<div id="bg"></div>
+
+<script>
+
+    var inpVind = document.getElementById("inpVind");
+    var btnVind = document.getElementById("btnVind");
+    var divVind = document.getElementById("divVind");
+
+    btnVind.onclick = function () {
+        let watt = inpVind.value * 15;
+        if (inpVind.value < 2.5){
+            divVind.innerHTML = "Verdien er for liten, vindmøllen funker ikke, sucka"
+        }
+        else if (inpVind.value > 15){
+            divVind.innerHTML = "Verdien er for høy, vindmøllen funker ikke sucka"
+        }
+        else {
+            divVind.innerHTML = "Ved " + inpVind.value + " m/s gir vindmølla " + watt + " watt i timen"
+        }
+    }
+
+</script>
+
+</body>
+</html>
